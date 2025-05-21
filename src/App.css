@@ -1,3 +1,34 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #213547;
+  --container-bg: #ffffff;
+  --input-border: #ccc;
+  --button-bg: #646cff;
+  --button-hover: #4b52c3;
+  --result-bg: #f6f8ff;
+  --result-shadow: rgba(100,108,255,0.08);
+  --clock-out-color: #646cff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --container-bg: #1a1a1a;
+    --input-border: #444;
+    --button-bg: #747bff;
+    --button-hover: #535bf2;
+    --result-bg: #2a2a2a;
+    --result-shadow: rgba(116,123,255,0.08);
+    --clock-out-color: #747bff;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -45,7 +76,7 @@
   max-width: 500px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #fff;
+  background: var(--container-bg);
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
 }
@@ -69,25 +100,24 @@
   font-weight: 500;
 }
 
-input[type="number"] {
+input[type="number"],
+input[type="time"] {
   width: 60px;
   padding: 0.3rem 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 1rem;
+  background-color: var(--container-bg);
+  color: var(--text-color);
 }
 
 input[type="time"] {
   width: 120px;
-  padding: 0.3rem 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
 }
 
 button[type="submit"] {
   padding: 0.7rem 1.5rem;
-  background: #646cff;
+  background: var(--button-bg);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -95,21 +125,22 @@ button[type="submit"] {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 button[type="submit"]:hover {
-  background: #4b52c3;
+  background: var(--button-hover);
 }
 
 .result {
   margin-top: 2rem;
   padding: 1rem;
-  background: #f6f8ff;
+  background: var(--result-bg);
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(100,108,255,0.08);
+  box-shadow: 0 1px 4px var(--result-shadow);
 }
 
 .clock-out-time {
   font-size: 2rem;
   font-weight: bold;
-  color: #646cff;
+  color: var(--clock-out-color);
   margin: 0.5rem 0 0 0;
 }
