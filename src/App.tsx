@@ -75,9 +75,11 @@ function App() {
         <div className="result">
           <h2>You should clock out at:</h2>
           <p className="clock-out-time">{clockOutTime}</p>
+          <a href='http://www.atokansas.com'></a>
         </div>
       )}
     </div>
+
   )
 }
 
